@@ -25,12 +25,18 @@ Nhập lựa chọn: ''')
                 print("\nNhập mã morse: ",end="")
                 list=[str(x) for x in input().split(" ")]
                 for i in list:
-                    print(dichMorse[i],end="")
+                    try:
+                        print(dichMorse[i],end="")
+                    except:
+                        continue
             elif chon == '2':
                 print("\nNhập văn bản cần chuyển sang morse: ",end="")
                 list=[char for char in input().upper()]
                 for i in list:
-                    print(chuyenKiTuSangMorse[i],end=" ")
+                    try:
+                        print(chuyenKiTuSangMorse[i],end=" ")
+                    except:
+                        continue
             elif chon == '3':
                 clear()
                 print("\nBạn đã thoát chương trình!")
