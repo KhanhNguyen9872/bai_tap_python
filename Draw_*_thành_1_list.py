@@ -8,19 +8,30 @@ def clear():
 		os.system("clear")
 
 clear()
+help=" Gõ [exit] để hoàn tất!\n Gõ [clear] để xóa!\n"
 limit=int(input("Nhập độ dài: "))
 user_input=""""""
-print(f"Nhập dấu * [Độ dài: {limit}] | Gõ [exit] để hoàn tất!")
+show=""""""
+lines=0
+print(f"Nhập dấu * [Độ dài: {limit}]\n{help}")
 while True:
     inp=str(input())
     if (inp == "exit"):
         break
-    elif (len(inp)!=5):
+    elif (inp == "clear"):
+        user_input=""""""
+        show=""""""
         clear()
-        print(f"Độ dài là {limit} | Gõ [exit] để hoàn tất!")
-        print(user_input,end="")
+        print(f"Độ dài là {limit}\n{help}")
+        print(show,end="")
+    elif (len(inp)!=limit):
+        clear()
+        print(f"Độ dài là {limit}\n{help}")
+        print(show,end="")
     else:
         user_input+=inp
+        show+=f"{inp}\n"
+        lines+=1
 
 count=1
 answer=[]
@@ -28,5 +39,7 @@ for line in user_input:
     if (line == "*"):
         answer.append(count)
     count+=1
-        
+
+answer.append(f"{limit}@")
+answer.append(f"{lines}@")
 print(f"\n Kết quả: \n{answer}")
