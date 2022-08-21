@@ -2,18 +2,22 @@
 import os
 
 def clear():
-	if (os.name == 'nt'):
-		os.system("cls")
-	else:
-		os.system("clear")
+    if (os.name == 'nt'):
+        os.system("cls")
+    else:
+        os.system("clear")
+        
+def main():
+	global limit
+	print(f"Nhập dấu * [Độ dài: {limit}]\n Gõ [exit] để hoàn tất!\n Gõ [clear] để xóa!\n123456789")
 
 clear()
-help=" Gõ [exit] để hoàn tất!\n Gõ [clear] để xóa!\n"
 limit=int(input("Nhập độ dài: "))
 user_input=""""""
 show=""""""
+num=""
 lines=0
-print(f"Nhập dấu * [Độ dài: {limit}]\n{help}")
+main()
 while True:
     inp=str(input())
     if (inp == "exit"):
@@ -22,11 +26,11 @@ while True:
         user_input=""""""
         show=""""""
         clear()
-        print(f"Độ dài là {limit}\n{help}")
+        main()
         print(show,end="")
     elif (len(inp)!=limit):
         clear()
-        print(f"Độ dài là {limit}\n{help}")
+        main()
         print(show,end="")
     else:
         user_input+=inp
