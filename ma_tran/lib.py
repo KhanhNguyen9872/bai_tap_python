@@ -82,12 +82,13 @@ matrix={e}""")
                             if (int(i)==int(row)) or (int(matrix[i][num])==0) or (int(matrix[row][num])==0):
                                 continue
                             else:
-                                up=round(float(matrix[row][num]),2)
-                                down=round(float(matrix[i][num]),2)
+                                up=float(matrix[row][num])
+                                down=float(matrix[i][num])
                                 print("\n({4}) h{0} -> h{0} - ({1}/{2}) * h{3}".format(str(row+1),str(up),str(down),str(i+1),str(loop_calc)))
                                 for j in range(0,len(matrix[row]),1):
                                     matrix[row][j]=float(matrix[row][j])-float(up/down)*float(matrix[i][j])
                                 print_matrix(m,n)
                                 loop_calc+=1
                 else:
-                    one=int(num)
+                    one=int(num+1)
+                    break
