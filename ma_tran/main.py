@@ -48,7 +48,7 @@ while 1:
         print()
         matrix{0}=lib.input_matrix(m{0},n{0},int({0}))
         break
-    if (ask=="N") or (ask=="n"):
+    elif (ask=="N") or (ask=="n"):
         break""".format(str(choose)))
     if max == 1:
         print()
